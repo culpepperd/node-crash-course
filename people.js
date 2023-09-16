@@ -6,7 +6,7 @@ function youKnow(people, ages) {
     people = people;
     ages = ages;
     for(i = 0; i < people.length; i++) {
-        console.log(people[i], ages[i]);
+        console.log(people[i] + ' is ' + ages[i] + ' years old.');
     }
 }
 

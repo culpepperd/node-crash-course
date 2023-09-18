@@ -15,3 +15,7 @@ const { people, ages, youKnow } = require('./people');
 youKnow(people, ages);
 
 // console.log(people, ages);
+
+const operSys = require('os');
+
+console.log('The platform is: ' + operSys.platform() + ' and the home directory is: ' + operSys.homedir());

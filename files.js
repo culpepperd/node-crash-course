@@ -20,16 +20,39 @@ const fs = require('fs');
 //     console.log('file was written');
 // });
 
+
+
 // directories
-if (!fs.existsSync('./assets')) {
-    fs.mkdir('./assets', (err) => {
-        if (err) {
-            console.log(err);
-            console.log('folder already exists');
-        }
-        console.log('folder created');
-    })
-}
+// existsSync checks if the file path exists
+// if (!fs.existsSync('./assets')) {
+//     // mkdir creates the new folder
+//     fs.mkdir('./assets', (err) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         console.log('folder created');
+//     })
+// } else {
+//     // rmdir deletes the folder
+//     fs.rmdir('./assets', (err) => {
+//         if (err) {
+//             console.log(err)
+//         }
+//         console.log('folder deleted');
+//     })
+// }
 
 
 // deleting files
+if (!fs.existsSync('./docs/deleteme.txt')) {
+    fs.writeFile('./docs/deleteme.txt', 'Delete me!', () => {
+        console.log('deleteme.txt was created!');
+    })
+} else {
+    fs.unlink('./docs/deleteme.txt', (err) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log('file deleted!');
+    })
+}

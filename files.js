@@ -16,7 +16,7 @@ const fs = require('fs');
 //     console.log('file was written');
 // });
 
-// fs.writeFile('./docs/blog2.txt', 'Hello, from blog2.txt!', () => {
+// fs.writeFile('./docs/blog3.txt', 'Hello, from blog2.txt!', () => {
 //     console.log('file was written');
 // });
 
@@ -44,18 +44,18 @@ const fs = require('fs');
 
 
 // *** deleting files ***
-// existsSync checks if the path file exists
-if (!fs.existsSync('./docs/deleteme.txt')) {
-    // writeFile creates the file
-    fs.writeFile('./docs/deleteme.txt', 'Delete me!', () => {
-        console.log('deleteme.txt was created!');
-    })
-} else {
-    // unlink deletes the file
-    fs.unlink('./docs/deleteme.txt', (err) => {
-        if (err) {
-            console.log(err)
-        }
-        console.log('file deleted!');
-    })
-}
+// // existsSync checks if the path file exists
+// if (!fs.existsSync('./docs/deleteme.txt')) {
+//     // writeFile creates the file
+//     fs.writeFile('./docs/deleteme.txt', 'Delete me!', () => {
+//         console.log('deleteme.txt was created!');
+//     })
+// } else {
+//     // unlink deletes the file
+//     fs.unlink('./docs/deleteme.txt', (err) => {
+//         if (err) {
+//             console.log(err)
+//         }
+//         console.log('file deleted!');
+//     })
+// }

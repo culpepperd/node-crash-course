@@ -1,7 +1,7 @@
 // importing the built-in fs "File System" module
 const fs = require('fs');
 
-// reading files
+// *** reading files ***
 // fs.readFile('./docs/blog1.txt', (err, data) => {
 //     if (err) {
 //         console.log(err);
@@ -11,7 +11,7 @@ const fs = require('fs');
 
 // console.log('last line');
 
-// writing files
+// *** writing files ***
 // fs.writeFile('./docs/blog1.txt', 'Hello, from blog1.txt!', () => {
 //     console.log('file was written');
 // });
@@ -22,10 +22,10 @@ const fs = require('fs');
 
 
 
-// directories
+// *** directories ***
 // existsSync checks if the file path exists
 // if (!fs.existsSync('./assets')) {
-//     // mkdir creates the new folder
+//     // mkdir makes the new folder
 //     fs.mkdir('./assets', (err) => {
 //         if (err) {
 //             console.log(err);
@@ -43,12 +43,15 @@ const fs = require('fs');
 // }
 
 
-// deleting files
+// *** deleting files ***
+// existsSync checks if the path file exists
 if (!fs.existsSync('./docs/deleteme.txt')) {
+    // writeFile creates the file
     fs.writeFile('./docs/deleteme.txt', 'Delete me!', () => {
         console.log('deleteme.txt was created!');
     })
 } else {
+    // unlink deletes the file
     fs.unlink('./docs/deleteme.txt', (err) => {
         if (err) {
             console.log(err)

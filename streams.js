@@ -7,7 +7,7 @@ const readStream = fs.createReadStream('./docs/blog3.txt', { encoding: 'utf8' })
 
 const writeStream = fs.createWriteStream('./docs/blog4.txt');
 
-// Event listener
+// // .on is an event listener
 // readStream.on('data', (chunk) => {
 //     console.log('-!-!-!-!- NEW CHUNK -!-!-!-!-');
 //     console.log(chunk);
@@ -15,4 +15,7 @@ const writeStream = fs.createWriteStream('./docs/blog4.txt');
 //     writeStream.write(chunk);
 // })
 
+// .pipe performs nearly the same code as above,
+// reading a file and writing to a file,
+// but with much less code.
 readStream.pipe(writeStream);

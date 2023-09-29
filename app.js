@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-
     // res.send('<p>Welcome to the About page!</p>');
+    res.sendFile('./views/about.html', { root: __dirname });
 
 });

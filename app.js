@@ -11,3 +11,9 @@ app.get('/', (req, res) => {
     res.send('<p>Hey look, World! No hands!</p>');
 
 });
+
+app.get('/about', (req, res) => {
+
+    res.send('<p>Welcome to the About page!</p>');
+
+});

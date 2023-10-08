@@ -19,11 +19,9 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
-// redirects
-app.get('/about-us', (req, res) => {
-    // res.send('<p>Welcome to the About page!</p>');
-    res.redirect('/about');
-});
+app.get('/blogs/create', (req, res) => {
+    res.render();
+})
 
 // 404 page - this will fire for anything NOT matching
 // the above URLs

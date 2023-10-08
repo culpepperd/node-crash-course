@@ -1,83 +1,83 @@
-const http = require('http');
-const fs = require('fs');
-const _ = require('lodash');
+// const http = require('http');
+// const fs = require('fs');
+// const _ = require('lodash');
 
-const server = http.createServer((req, res) => {
+// const server = http.createServer((req, res) => {
 
-    // lodash
-    const num = _.random(0, 20);
-    console.log(num);
+//     // lodash
+//     const num = _.random(0, 20);
+//     console.log(num);
 
-    const greet = _.once(() => {
-        console.log('hello');
-    });
+//     const greet = _.once(() => {
+//         console.log('hello');
+//     });
 
-    greet();
-    greet();
+//     greet();
+//     greet();
 
-    // Set header content type
-    res.setHeader('Content-Type', 'text/html');
+//     // Set header content type
+//     res.setHeader('Content-Type', 'text/html');
 
-    // find the path the user wants to visit
-    let path = './views/';
-    switch(req.url) {
-        case '/':
-            path += 'index.html';
-            res.statusCode = 200;
-            break;
-        case '/about':
-            path += 'about.html';
-            res.statusCode = 200;
-            break;
-        // case '/about-us':
-        //     path += 'about-us.html';
-        //     res.statusCode = 301;
-        //     //res.setHeader('Location', '/about');
-        //     //res.end();
-        //     break;
-        default:
-            path += '404.html';
-            res.statusCode = 404;
-            // break;
-    }
+//     // find the path the user wants to visit
+//     let path = './views/';
+//     switch(req.url) {
+//         case '/':
+//             path += 'index.html';
+//             res.statusCode = 200;
+//             break;
+//         case '/about':
+//             path += 'about.html';
+//             res.statusCode = 200;
+//             break;
+//         // case '/about-us':
+//         //     path += 'about-us.html';
+//         //     res.statusCode = 301;
+//         //     //res.setHeader('Location', '/about');
+//         //     //res.end();
+//         //     break;
+//         default:
+//             path += '404.html';
+//             res.statusCode = 404;
+//             // break;
+//     }
 
-    // Send an html file
-    fs.readFile(path, (err, data) => {
-        if (err) {
-            console.log(err);
-            res.end();
-        } else {
-            res.end(data);
-        }
-    })
-});
+//     // Send an html file
+//     fs.readFile(path, (err, data) => {
+//         if (err) {
+//             console.log(err);
+//             res.end();
+//         } else {
+//             res.end(data);
+//         }
+//     })
+// });
 
-server.listen(3000, 'localhost', () => {
-    console.log('listening for requests on port 3000')
-});
+// server.listen(3000, 'localhost', () => {
+//     console.log('listening for requests on port 3000')
+// });
 
-/*
-// ***** Simple Intro *****
-const http = require('http');
+// /*
+// // ***** Simple Intro *****
+// const http = require('http');
 
-// server variable set to the value of http.createServer
-// with a request and response object as parameters
-const server = http.createServer((req, res) => {
-    console.log(req.url, req.method);
+// // server variable set to the value of http.createServer
+// // with a request and response object as parameters
+// const server = http.createServer((req, res) => {
+//     console.log(req.url, req.method);
 
-    // 1. Set header content type
-    res.setHeader('Content-Type', 'text/html');
+//     // 1. Set header content type
+//     res.setHeader('Content-Type', 'text/html');
 
-    // 2. Write content to the browser
-    res.write('<head><link rel="stylesheet" href="#"></head>');
-    res.write('<p>Hello, World!</p>');
-    res.write('<p>Hello again, World!</p>');
+//     // 2. Write content to the browser
+//     res.write('<head><link rel="stylesheet" href="#"></head>');
+//     res.write('<p>Hello, World!</p>');
+//     res.write('<p>Hello again, World!</p>');
 
-    // 3. End the response
-    res.end();
-});
+//     // 3. End the response
+//     res.end();
+// });
 
-server.listen(3000, 'localhost', () => {
-    console.log('listening for requests on port 3000')
-});
-*/
+// server.listen(3000, 'localhost', () => {
+//     console.log('listening for requests on port 3000')
+// });
+// */

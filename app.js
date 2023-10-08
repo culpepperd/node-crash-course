@@ -11,7 +11,7 @@ app.listen(3000);
 
 app.get('/', (req, res) => {
     // res.send('<p>Hey look, World! No hands!</p>');
-    res.sendFile('./views/index.html', { root: __dirname });
+    res.render('index');
 });
 
 app.get('/about', (req, res) => {

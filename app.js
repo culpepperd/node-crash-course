@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
     // res.send('<p>Welcome to the About page!</p>');
-    res.sendFile('./views/about.html', { root: __dirname });
+    res.render('about');
 });
 
 // redirects
@@ -28,5 +28,5 @@ app.get('/about-us', (req, res) => {
 // 404 page - this will fire for anything NOT matching
 // the above URLs
 app.use((req, res) => {
-    res.status(404).sendFile('./views/404.html', { root: __dirname});
+    res.status(404).render('404');
 });

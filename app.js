@@ -10,7 +10,11 @@ app.set('view engine', 'ejs');
 app.listen(3000);
 
 app.get('/', (req, res) => {
-    // res.send('<p>Hey look, World! No hands!</p>');
+    const blogs = [
+        {title: 'Yoshi finds eggs', snippet: 'Blarp Bleep Bloop'},
+        {title: 'Mario finds stars', snippet: 'Blarp Bleep Bloop'},
+        {title: 'How to defeat bowser', snippet: 'Blarp Bleep Bloop'},
+    ];
     res.render('index', { title: 'Home' });
 });
 

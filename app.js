@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
         {title: 'Mario finds stars', snippet: 'Blarp Bleep Bloop'},
         {title: 'How to defeat bowser', snippet: 'Blarp Bleep Bloop'},
     ];
-    res.render('index', { title: 'Home' });
+    res.render('index', { title: 'Home', blogs });
 });
 
 app.get('/about', (req, res) => {

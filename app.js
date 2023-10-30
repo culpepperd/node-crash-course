@@ -24,12 +24,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// middleware, pt. 3
-app.use((req, res, next) => {
-    console.log('in middleware pt. 3');
-    next();
-});
-
 app.get('/', (req, res) => {
     const blogs = [
         {title: 'Yoshi finds eggs', snippet: 'Blarp Bleep Bloop'},

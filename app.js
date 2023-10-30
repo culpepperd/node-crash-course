@@ -20,7 +20,13 @@ app.use((req, res, next) => {
 
 // middleware, pt. 2
 app.use((req, res, next) => {
-    console.log('in the next middleware');
+    console.log('in middleware pt. 2');
+    next();
+});
+
+// middleware, pt. 3
+app.use((req, res, next) => {
+    console.log('in middleware pt. 3');
     next();
 });
 

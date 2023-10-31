@@ -10,20 +10,8 @@ app.set('view engine', 'ejs');
 // listen for requests
 app.listen(3000);
 
-// middleware, pt. 1
-app.use((req, res, next) => {
-    console.log('new request made:');
-    console.log('host: ', req.hostname);
-    console.log('path: ', req.path);
-    console.log('method: ', req.method);
-    next();
-});
-
-// middleware, pt. 2
-app.use((req, res, next) => {
-    console.log('in middleware pt. 2');
-    next();
-});
+// using morgan middleware
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
     const blogs = [

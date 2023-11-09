@@ -6,14 +6,27 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connect to mongodb
-const dbURI = 'mongodb+srv://Karn:YWXdGeZvQhE84aLo@nodetuts.pebzrpt.mongodb.net/node-tuts?retryWrites=true&w=majority';
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
+const dbURI = 'mongodb+srv://nodejscrashcourse:nodejscrashcoursepassword@youtubevideocluster.iqcvkvl.mongodb.net/?retryWrites=true&w=majority';
+
 
 // register view engine
 app.set('view engine', 'ejs');
 
+async function connect() {
+    try {
+        await mongoose.connect(dbURI)
+        console.log("Connected to MongoDB");
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+connect();
+
 // listen for requests
-app.listen(3000);
+app.listen(3000, () => {
+    console.log("Server started on port 3000");
+});
 
 // morgan middleware and static files
 app.use(express.static('public'));

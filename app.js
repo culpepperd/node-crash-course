@@ -7,7 +7,8 @@ const app = express();
 
 // connect to mongodb
 const dbURI = 'mongodb+srv://nodejscrashcourse:nodejscrashcoursepassword@youtubevideocluster.iqcvkvl.mongodb.net/?retryWrites=true&w=majority';
-mongoose.connect(dbURI).then((result) => console.log('connected to db'))
+// connect to db first, then callback function with a result, then listen for requests
+mongoose.connect(dbURI).then((result) => app.listen(3000))
 .catch((err) => console.log(err));
 
 // register view engine
@@ -26,9 +27,9 @@ async function connect() {
 connect();
 */
 // listen for requests
-app.listen(3000, () => {
-    console.log("Server started on port 3000");
-});
+// app.listen(3000, () => {
+//     console.log("Server started on port 3000");
+// });
 
 // morgan middleware and static files
 app.use(express.static('public'));

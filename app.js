@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connect to mongodb
-const dbURI = 'mongodb+srv://nodejscrashcourse:nodejscrashcoursepassword@youtubevideocluster.iqcvkvl.mongodb.net/?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://netninja:netninjapassword@nodetuts.jfotpvv.mongodb.net/?retryWrites=true&w=majority';
 // connect to db first, then callback function with a result, then listen for requests
 mongoose.connect(dbURI).then((result) => app.listen(3000, () => {
     console.log("Port 3000 - listening for requests")

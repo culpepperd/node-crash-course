@@ -35,7 +35,17 @@ app.get('/add-blog', (req, res) => {
         .catch((err) => {
             console.log(err);
         });
-});
+})
+
+app.get('all-blogs', (req, res) => {
+    Blog.find()
+        .then((result) => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+})
 
 app.get('/', (req, res) => {
     const blogs = [

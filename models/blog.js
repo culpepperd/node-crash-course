@@ -23,4 +23,4 @@ const blogSchema = new Schema({
 // communicating with the db collection for that document type
 // 'Blog' will be pluralized (IDK why...)
 const Blog = mongoose.model('Blog', blogSchema);
-module.exports = BLog;
+module.exports = Blog;

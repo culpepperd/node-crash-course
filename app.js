@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const Blog = require('./models/blog');
 
 // express app
 const app = express();
@@ -15,26 +16,26 @@ mongoose.connect(dbURI).then((result) => app.listen(3000, () => {
 // register view engine
 app.set('view engine', 'ejs');
 
-/*
-async function connect() {
-    try {
-        await mongoose.connect(dbURI)
-        console.log("Connected to MongoDB");
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-connect();
-*/
-// listen for requests
-// app.listen(3000, () => {
-//     console.log("Server started on port 3000");
-// });
-
 // morgan middleware and static files
 app.use(express.static('public'));
 app.use(morgan('dev'));
+
+// mongoose and mongo sandbox routes
+app.get('/add-blog', (req, res) => {
+    const blog = new Blog({
+        title: 'new blog',
+        snippet: 'about my new blog',
+        body: 'more about my new blog'
+    });
+
+    blog.save()
+        .then((result) => {
+            res.send(result)
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
 
 app.get('/', (req, res) => {
     const blogs = [

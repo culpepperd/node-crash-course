@@ -37,7 +37,7 @@ app.get('/add-blog', (req, res) => {
         });
 });
 
-app.get('all-blogs', (req, res) => {
+app.get('/all-blogs', (req, res) => {
     Blog.find()
         .then((result) => {
             res.send(result);
@@ -46,6 +46,16 @@ app.get('all-blogs', (req, res) => {
             console.log(err);
         });
 });
+
+app.get('/single-blog', (req, res) => {
+    Blog.findById('65564f1714cd2b6455011959')
+        .then((result) => {
+            res.send(result)
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+})
 
 app.get('/', (req, res) => {
     const blogs = [

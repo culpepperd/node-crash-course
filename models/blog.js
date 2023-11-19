@@ -18,8 +18,8 @@ const blogSchema = new Schema({
     }
 }, {timestamps: true});
 
-// create a model based on blogSchema
-// a model surrounds the schema and provides an interface for 
+// Create a model based on blogSchema.
+// A model surrounds the schema and provides an interface for 
 // communicating with the db collection for that document type
 // 'Blog' will be pluralized (IDK why...)
 const Blog = mongoose.model('Blog', blogSchema);

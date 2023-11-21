@@ -57,21 +57,32 @@ app.use(morgan('dev'));
 //         });
 // });
 
-// blog routes
-app.get('/blogs')
+
 
 app.get('/', (req, res) => {
-    const blogs = [
-        {title: 'Yoshi finds eggs', snippet: 'Blarp Bleep Bloop'},
-        {title: 'Mario finds stars', snippet: 'Blarp Bleep Bloop'},
-        {title: 'How to defeat bowser', snippet: 'Blarp Bleep Bloop'},
-    ];
-    res.render('index', { title: 'Home', blogs });
+    res.redirect('/blogs');
+    // const blogs = [
+    //     {title: 'Yoshi finds eggs', snippet: 'Blarp Bleep Bloop'},
+    //     {title: 'Mario finds stars', snippet: 'Blarp Bleep Bloop'},
+    //     {title: 'How to defeat bowser', snippet: 'Blarp Bleep Bloop'},
+    // ];
+    // res.render('index', { title: 'Home', blogs });
 });
 
 app.get('/about', (req, res) => {
     // res.send('<p>Welcome to the About page!</p>');
     res.render('about', { title: 'About Us' });
+});
+
+// blog routes
+app.get('/blogs', (req, res) => {
+    Blog.find()
+        .then((result) => {
+
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 });
 
 app.get('/blogs/create', (req, res) => {

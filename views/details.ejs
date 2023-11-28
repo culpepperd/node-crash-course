@@ -16,7 +16,10 @@
 
     <script>
         const trashcan = document.querySelector('a.delete');
-    </script>
 
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/blogs/${trashcan.dataset.doc}`;
+        })
+    </script>
 </body>
 </html>

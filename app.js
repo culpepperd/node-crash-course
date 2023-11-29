@@ -114,6 +114,19 @@ app.get('/blogs/:id', (req, res) => {
         })
 })
 
+// handler for delete request
+app.delete('/blogs/:id', (req, res) => {
+    const id = req.params.id;
+
+    Blog.findByIdAndDelete(id)
+        .then(result => {
+            res.json({ redirect: '/blogs' });
+        })
+        .catch(err => {
+            console.log(err);
+        })
+})
+
 // 404 page - this will fire for anything NOT matching
 // the above URLs
 app.use((req, res) => {
